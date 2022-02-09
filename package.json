@@ -22,8 +22,7 @@
   },
   "authors": [
     "Dzmitry_Shaplyka@epam.com",
-    "Oleksandr_Halichenko@epam.com",
-    "Yerassyl_Nurzhan@epam.com"
+    "Oleksandr_Halichenko@epam.com"
   ],
   "license": "EPAM Systems",
   "dependencies": {
