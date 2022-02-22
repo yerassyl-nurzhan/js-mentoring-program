@@ -60,8 +60,6 @@ for (let key in personIncomes) {
   totalIncome += personIncomes[key];
 }
 
-console.log(totalIncome);
-
 module.exports = {
   forFactorial,
   whileFactorial,

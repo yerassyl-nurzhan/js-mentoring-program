@@ -17,10 +17,7 @@ if (y < 10) {
     z1 = x * y;
 };
 
-(y < 10) ? z2 = x + y : z2 = x * y;
-
-console.log (z1);
-console.log (z2);
+z2 = y < 10 ? x + y : x * y;
 
 /** Task: 2
  * The system receives 3 params - alpha, beta, operator.
@@ -62,13 +59,13 @@ switch (operator) {
 const redemption = 420;
 let discount;
 
-if (redemption - 350 < 0) {
+if (redemption <= 350) {
     discount = 0
-} else if (redemption - 1350 < 351){
-    discount = 15
-} else if (redemption - 2700 < 1351){
+} else if (redemption <= 1350){
+    discount = 15 
+} else if (redemption <= 2700){
     discount = 30
-} else if (redemption - 6500 < 2701){
+} else if (redemption <= 6500){
     discount = 45
 }
 
