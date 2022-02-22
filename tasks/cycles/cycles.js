@@ -8,6 +8,27 @@
 let forFactorial, whileFactorial, doFactorial;
 const n = 10; //10! = 3628800
 
+forFactorial = n;
+
+for (let i = 1; i < n; i++) {
+  forFactorial *= i; 
+}
+
+whileFactorial = n;
+let i = n;
+
+while (i > 1){
+  i--;
+  whileFactorial *= i;
+}
+
+doFactorial = n;
+
+do{
+  i++;
+  doFactorial *= i;
+} while (i < n - 1)
+
 /** Task: 2
  * return the concatenated string from an array of substring
  * assign the result to variable 'str'
@@ -15,6 +36,11 @@ const n = 10; //10! = 3628800
  */
 let str;
 const substr = ["I", " love", " JS"];
+
+str = '';
+for (let el of substr){
+  str += el;
+}
 
 /** Task: 3
  * calculate a total of income of certain person
@@ -28,6 +54,11 @@ const personIncomes = {
   interestOnDeposit: 250,
   otherExpences: -300
 };
+
+totalIncome = 0;
+for (let key in personIncomes) {
+  totalIncome += personIncomes[key];
+}
 
 module.exports = {
   forFactorial,
