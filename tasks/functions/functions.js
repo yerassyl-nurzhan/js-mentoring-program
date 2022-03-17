@@ -10,7 +10,7 @@
  *
  */
 function sum(a, b) {
-
+	return a + b;
 }
 
 /**
@@ -20,16 +20,23 @@ function sum(a, b) {
  *    lastName: "Dou"
  * }
  */
-function getFullName(object) {
-
-}
+ function getFullName(object) {
+	let person = {
+		firstName : "John",
+		lastName : "Dou",
+	}
+			return object.firstName + " " + object.lastName	
+		}
 
 /**
  * write fuction that checks if number is odd
  * true if odd, false if even
  */
 function isOdd(n) {
-
+	if (n%2 === 1)
+		return true;
+	else
+		return false;
 }
 
 /**
@@ -38,7 +45,7 @@ function isOdd(n) {
  * console.log(getShortest(["one", "two", "three"])) // one
  */
 function getShortest(wordArray) {
-
+	return wordArray.sort((a, b) => a.length - b.length)[0];
 }
 
 /**
@@ -47,7 +54,10 @@ function getShortest(wordArray) {
  * console.log(getGoogle(5)) // gooooogle
  */
 function getGoogle(n) {
-
+	let str = "";
+	for (let i = 0; i<n; i++)
+	str += "o";
+	return "g" + "o".repeat(n) + "gle";
 }
 
 /**
@@ -61,9 +71,13 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-
-}
+ function getUser(firstName=null, lastName=null, age=null) {
+	return {
+		firstName, 
+		lastName, 
+		age
+	 }
+ };
 
 /**
  * write function that calculates total path traveled.
@@ -72,7 +86,15 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
-
+	let array =
+	[
+	{direction: "Kiyv - Minsk", distance: 567},
+	{direction: "Kiyv - Paris", distance: 2402},
+	];
+	let total = path.reduce(function(accunulator, item) {
+	return accunulator + item.distance;
+	}, 0)
+	return total;
 }
 
 /**
@@ -87,10 +109,12 @@ function getTotalPath(path) {
  * console.log(discount10(100)); // 90
  */
 
-function discountFunction(percentage) {
-
-	return function (amount) {};
-}
+ function discountFunction(percentage) {
+	function totalAmountFunction(amount) {
+	  return amount - (amount * percentage / 100);
+	}
+	return totalAmountFunction;
+  }
 
 /**
  * Write the methods inside the given objects that:
@@ -100,15 +124,16 @@ function discountFunction(percentage) {
  */
 
 const myObject = {
-	name: 'John',
-	lastName: 'Doe',
+	name: "John",
+	lastName: "Doe",
 	age: 25,
-	friends: ['Mike', 'Alan', 'Daniel'],
+	friends: ["Mike", "Alan", "Daniel"],
 	keys() {
-		//write your code here
+		for (let key in this)
+		console.log(key)
 	},
 	call() {
-		//write your code here
+		return "My name is " + this.name + " " + this.lastName + " and I am " + this.age + " years old. " + "My best friend is " + this.friends[2];
 	}
 
 };
