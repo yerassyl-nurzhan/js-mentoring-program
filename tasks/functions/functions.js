@@ -20,12 +20,8 @@ function sum(a, b) {
  *    lastName: "Dou"
  * }
  */
- function getFullName() {
-	let person = {
-		firstName : "John",
-		lastName : "Dou",
-	}
-			return person.firstName + " " + person.lastName;	
+ function getFullName(object) {
+			return object.firstName + " " + object.lastName;	
 		}
 
 /**
@@ -54,7 +50,6 @@ function getShortest(wordArray) {
  * console.log(getGoogle(5)) // gooooogle
  */
 function getGoogle(n) {
-	let str = "";
 	return "g" + "o".repeat(n) + "gle";
 }
 
