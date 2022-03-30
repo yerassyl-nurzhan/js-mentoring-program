@@ -43,13 +43,11 @@ function centuryFromYear(year) {
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
  */
 function strCount(str, char) {
-  if (str.length > 0){
-    return str.match(new RegExp(char, "g") || []).length;
-  } 
-  else {
-    return 0;
-  }
-}
+  const re = new RegExp(char, 'gi');
+  const matchStr = str.match(re);
+  return matchStr && matchStr.length || 0;
+} 
+
 
 /**
  * Write a method to reduce the length of the string or truncate if it is longer
@@ -63,12 +61,7 @@ function strCount(str, char) {
  * console.log(truncateString('This', 6)) // 'This'
  */
 function truncateString(str, num) {
-  if (str.length > num) {
-    return str.substring(0, num) + "...";
-  } 
-  else {
-    return str;
-  }
+  return str.length > num && str.substring(0, num) + "..." || str;
 }
 
 /**
