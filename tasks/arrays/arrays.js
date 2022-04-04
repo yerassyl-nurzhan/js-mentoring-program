@@ -7,7 +7,9 @@ const { objDisplay } = require("chai/lib/chai/utils");
  * @return {Array} - char names
  */
 function getCharactersNames(chars) {
-	return chars.name;
+	return chars.map((currentChar) =>{
+		return currentChar.name;
+	});
 }
 
 /**
@@ -15,7 +17,7 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
-	console.log(chars.name);
+	return chars.forEach(name => console.log(name));
 }
 
 /**
@@ -36,7 +38,7 @@ function getNonHumanCharacters(chars) {
  * @return {Object} - Jerry object
  */
 function getJerryInfo(chars) {
-	return chars.filter(chars => chars.name == "Jerry Smith");
+	return chars.find(chars => chars.name == "Jerry Smith");
 }
 
 /**
@@ -46,7 +48,7 @@ function getJerryInfo(chars) {
  * @return {boolean}
  */
 function isAllHuman(chars) {
-	return chars.includes("species" == "Human");
+	return chars.every(species => species == "Human");
 }
 
 /**
@@ -56,7 +58,7 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
-	return chars.some(String => "type" === "Fish-Person");
+	return chars.some(type => type == "Fish-Person");
 }
 
 /**
