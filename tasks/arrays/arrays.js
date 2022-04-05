@@ -38,7 +38,7 @@ function getNonHumanCharacters(chars) {
  * @return {Object} - Jerry object
  */
 function getJerryInfo(chars) {
-	return chars.find(chars => chars.name == "Jerry Smith");
+	return chars.find(chars => chars.name === "Jerry Smith");
 }
 
 /**
@@ -48,7 +48,7 @@ function getJerryInfo(chars) {
  * @return {boolean}
  */
 function isAllHuman(chars) {
-	return chars.every(species => species == "Human");
+	return chars.every(species => species === "Human");
 }
 
 /**
@@ -58,7 +58,7 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
-	return chars.some(type => type == "Fish-Person");
+	return chars.some(type => type === "Fish-Person");
 }
 
 /**
