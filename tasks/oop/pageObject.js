@@ -25,11 +25,15 @@ class BasePage{
 	}
 
 	open(pageName) {
-		return `"Open this ${this.url}/${pageName}"`;
+		return `Open this ${this.url}/${pageName}`;
 	}
 
-	get footer() {return `${footer}`};
-	get header() {return `${header}`};
+	get footer() {
+		return new Component ('footer');
+	}
+	get header() {
+		return new Component ('header');
+	}
 }
 
 class LoginPage extends BasePage {
@@ -38,17 +42,18 @@ class LoginPage extends BasePage {
 		this.name = name;
 	}
 
-	open
+	open() {
+		return super.open(this.name);
+	}
 }
 
-class Component extends BasePage {
-	constructor(type, footer, header) {
-		super(footer, header);
+class Component {
+	constructor(type) {
 		this.type = type;
 	}
 
-	review(type) {
-		return `"I can review ${this.type}"`;
+	review() {
+		return `I can review ${this.type}`;
 	}
 }
 

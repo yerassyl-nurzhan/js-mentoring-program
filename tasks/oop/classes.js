@@ -10,8 +10,6 @@
  */
 
 class Person {
-    firstName = "Yerassyl";
-    lastName = "Nurzhan";
 
     constructor(firstName, lastName) {
         this.firstName = firstName;
@@ -31,7 +29,6 @@ class Person {
  */
 
 class Student extends Person{
-    grade = "5";
 
     constructor(firstName, lastName, grade) {
         super(firstName, lastName);
@@ -39,7 +36,7 @@ class Student extends Person{
     }
 
     getGrade() {
-        console.log(`${this.grade}`);
+        return `${this.grade}`;
     }
 }
 
