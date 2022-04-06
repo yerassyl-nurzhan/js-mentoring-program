@@ -1,5 +1,3 @@
-const { objDisplay } = require("chai/lib/chai/utils");
-
 /**
  * return an array of characters names
  * Avoid using forEach() method and for|for..of loops
