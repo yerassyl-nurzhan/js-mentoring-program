@@ -40,8 +40,8 @@ class Student extends Person{
     }
 }
 
-const person = new Person(); //create instance of class person
-const student = new Student(); //create instance of class student
+const person = new Person('John', 'Doe'); //create instance of class person
+const student = new Student('Jack', 'Smith', 3); //create instance of class student
 
 module.exports = {
     person,
