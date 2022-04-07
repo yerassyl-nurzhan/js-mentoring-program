@@ -9,7 +9,12 @@
  * console.log(reverseString(123)) // 'This is not a string!'
  */
 function reverseString(str) {
-
+  if (typeof str === 'string') {
+    return str.split("").reverse().join("");
+  }
+  else {
+    return "This is not a string!";
+  }
 }
 
 /**
@@ -23,7 +28,7 @@ function reverseString(str) {
  * hint: please choose and appropriate method from the Math object
  */
 function centuryFromYear(year) {
-
+  return Math.ceil(year/100);
 }
 
 /**
@@ -38,8 +43,11 @@ function centuryFromYear(year) {
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
  */
 function strCount(str, char) {
+  const re = new RegExp(char, 'gi');
+  const matchStr = str.match(re);
+  return matchStr && matchStr.length || 0;
+} 
 
-}
 
 /**
  * Write a method to reduce the length of the string or truncate if it is longer
@@ -53,7 +61,7 @@ function strCount(str, char) {
  * console.log(truncateString('This', 6)) // 'This'
  */
 function truncateString(str, num) {
-
+  return str.length > num && str.substring(0, num) + "..." || str;
 }
 
 /**
@@ -65,7 +73,7 @@ function truncateString(str, num) {
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
  */
 function replace10(text) {
-
+  return text.replace(/10/g, 'ten');
 }
 
 /**
@@ -76,7 +84,7 @@ function replace10(text) {
  * console.log(replaceConfidential("lorem [ipsum] si dolor")) // lorem [CONFIDENTIAL] si dolor
  */
 function replaceConfidential(text) {
-
+  return text.replace(/\[.*?\]/g, '[CONFIDENTIAL]');
 }
 
 module.exports = {
