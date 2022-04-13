@@ -22,7 +22,7 @@ const fs = require('fs/promises');
  * Use the fs.writeFile method inside the function
  */
 const sendRequest = async () => {
-
+	return
 };
 
 
