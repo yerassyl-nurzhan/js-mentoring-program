@@ -6,6 +6,11 @@ const {
 	secondPromise
 } = require("./utils/utilPromises");
 
+
+const fs = require('fs/promises');
+
+const promise = fs.readFile('file.txt', 'utf-8');
+
 /**
  * Task-1: Create a promise with the resolve state
  * Implement a promise what will be resolved with "Resolved!" string
@@ -14,7 +19,6 @@ const {
  */
 
 function promiseResolve() {
-	//PLACE YOUR CODE HERE:
 }
 
 /**
