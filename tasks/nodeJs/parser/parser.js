@@ -24,7 +24,7 @@
 const fs = require('fs');
 
 const jsonParser = () => {
-
+	return
 };
 
 module.exports = {
